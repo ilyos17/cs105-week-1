@@ -2,28 +2,34 @@
 
 int main(void)
 {
-    int height;
+    int n;
 
     do
     {
         printf("Height: ");
-        scanf("%d", &height);
+        scanf("%d", &n);
+  
     }
-    while (height < 1);
+    while (n <= 1);
 
-    for (int row = 0; row < height; row++)
+    int k = n - 1;
+    int l = 1;
+
+    while (k >= 0)
     {
-        for (int space = 0; space < height - row - 1; space++)
+        for (int i = 0; i < k; i++)
         {
             printf(" ");
         }
 
-        for (int hash = 0; hash <= row; hash++)
+        for (int i = 0; i < 2 * l; i++)
         {
             printf("#");
         }
 
         printf("\n");
+        l++;
+        k--;
     }
 
     return 0;
